@@ -28,11 +28,11 @@ import com.sun.deploy.util.StringUtils;
  *
  * 提示：
  *
- * -231<= x <= 231- 1
+ * Algorithm-Daily-practice
+ * IsPalindrome
  *
- * 进阶：你能不将整数转为字符串来解决这个问题吗？
- *
- * @author MoWang
+ * @author : Xuan Li
+ * @date : 2021-08-29 19:21
  */
 public class IsPalindrome {
     public boolean isPalindrome(int x) {
