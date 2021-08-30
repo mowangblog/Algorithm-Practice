@@ -32,7 +32,7 @@ import com.sun.deploy.util.StringUtils;
  * IsPalindrome
  *
  * @author : Xuan Li
- * @date : 2021-08-29 19:21
+ * @date : 2021-08-30 12:11
  */
 public class IsPalindrome {
     public boolean isPalindrome(int x) {
