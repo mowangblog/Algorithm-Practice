@@ -52,7 +52,7 @@ public class PlusOne {
         int[] result = new int[len + 2];
         result[0] = 1;
         return result;
-//        2
+//        复杂代码
 //        int len = digits.length;
 //        if (digits[len - 1] < 9) {
 //            digits[len - 1] += 1;
