@@ -40,7 +40,7 @@ import java.math.BigInteger;
  **/
 public class PlusOne {
     public int[] plusOne(int[] digits) {
-        //1
+        //简洁代码
         int len = digits.length - 1;
         for (int i = len; i >= 0; i--) {
             if (digits[i] != 9) {
