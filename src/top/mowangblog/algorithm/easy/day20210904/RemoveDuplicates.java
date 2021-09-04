@@ -58,7 +58,7 @@ public class RemoveDuplicates {
             }
         }
         return ++result;
-        //基础
+        //基础解法
 //        Map<Integer, Integer> map = new HashMap<>(nums.length);
 //        int result = 0;
 //        for (int i = 0; i < nums.length; i++) {
