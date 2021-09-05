@@ -50,7 +50,7 @@ import java.util.Map;
 @SuppressWarnings("all")
 public class RemoveDuplicates {
     public int removeDuplicates(int[] nums) {
-        //进阶简洁
+        //题目可知数组已按升序排列，因此可以进阶简洁
         int result = 0;
         for (int i = 1; i < nums.length; i++) {
             if (nums[result] != nums[i]){
@@ -70,14 +70,12 @@ public class RemoveDuplicates {
 //        }
 //        return result;
     }
-
     public static void main(String[] args) {
         RemoveDuplicates removeDuplicates = new RemoveDuplicates();
-        int[] ints = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
+        int[] ints = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4,1,3};
         int len = removeDuplicates.removeDuplicates(ints);
         for (int i = 0; i < len; i++) {
             System.out.print(ints[i]);
         }
-
     }
 }
