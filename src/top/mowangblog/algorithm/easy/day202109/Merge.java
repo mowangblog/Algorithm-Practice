@@ -1,6 +1,4 @@
-package top.mowangblog.algorithm.easy.day20210909;
-
-import java.util.Arrays;
+package top.mowangblog.algorithm.easy.day202109;
 
 /**
  * 给你两个按 非递减顺序 排列的整数数组nums1 和 nums2，另有两个整数 m 和 n ，分别表示 nums1 和 nums2 中的元素数目。

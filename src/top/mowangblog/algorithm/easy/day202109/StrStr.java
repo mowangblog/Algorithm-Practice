@@ -1,4 +1,4 @@
-package top.mowangblog.algorithm.easy.day20210908;
+package top.mowangblog.algorithm.easy.day202109;
 
 /**
  * 实现strStr()函数。

@@ -1,4 +1,4 @@
-package top.mowangblog.algorithm.easy.day20210902;
+package top.mowangblog.algorithm.easy.day202109;
 
 import java.util.Deque;
 import java.util.LinkedList;

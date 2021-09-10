@@ -1,7 +1,4 @@
-package top.mowangblog.algorithm.easy.day20210907;
-
-import java.util.Arrays;
-import java.util.Comparator;
+package top.mowangblog.algorithm.easy.day202109;
 
 /**
  * 编写一个函数来查找字符串数组中的最长公共前缀。

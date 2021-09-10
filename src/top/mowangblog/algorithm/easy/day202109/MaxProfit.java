@@ -1,4 +1,4 @@
-package top.mowangblog.algorithm.easy.day20210910;
+package top.mowangblog.algorithm.easy.day202109;
 
 /**
  *
