@@ -33,30 +33,38 @@ public class IsPalindrome {
         if (s.length() == 0) {
             return true;
         }
+
         //双指针
         int p1 = 0;
         int p2 = s.length() - 1;
         while(p1 < p2){
             if(!Character.isLetterOrDigit(s.charAt(p1))){
+                //不符合的字符直接跳过
                 p1++;
             }else if(!Character.isLetterOrDigit(s.charAt(p2))){
+                //不符合的字符直接跳过
                 p2--;
             }else if(Character.toLowerCase(s.charAt(p1)) == Character.toLowerCase(s.charAt(p2))){
+                //相等则进入下一位
                 p1++;
                 p2--;
             }else{
+                //不相等说明不是回文串直接返回false
                 return false;
             }
         }
         return true;
+
         //翻转判断
 //        StringBuilder stringBuilder = new StringBuilder();
 //        for (int i = 0; i < s.length(); i++) {
 //            if (Character.isLetterOrDigit(s.charAt(i))) {
+//                //符合要求的字符用StringBuilder存起来
 //                stringBuilder.append(s.charAt(i));
 //            }
 //        }
 //        String s1 = stringBuilder.toString().toLowerCase();
+//        //把字符串翻转并转化为小写后比较，相同则是回文串
 //        String s2 = stringBuilder.reverse().toString().toLowerCase();
 //        return s1.equals(s2);
     }
