@@ -1,2 +1,2 @@
 # Algorithm-Daily-practice
-Algorithm problem of  Leetcode，one question per day
+Algorithm problem of  Leetcode，Attach notes
