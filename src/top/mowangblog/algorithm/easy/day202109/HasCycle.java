@@ -43,17 +43,26 @@ import java.util.HashSet;
  * @date : 2021-09-13 21:13
  **/
 public class HasCycle {
+
     public boolean hasCycle(ListNode head) {
         if (head == null || head.next == null) {
             return false;
         }
-        HashSet<ListNode> listNodes = new HashSet<>();
-        while (head.next != null){
-            if (!listNodes.add(head)) {
-                return true;
+        //快慢指针
+        ListNode low = head;
+        ListNode fast = head.next;
+        //如果快指针追上了慢指针，是环形链表，退出循环
+        while (low != fast){
+            //出现null说明遍历完了链表，不是环形链表
+            if(fast == null || fast.next == null){
+                return false;
             }
-            head = head.next;
+            //慢指针每次前进一步
+            low = low.next;
+            //快指针每次前进两步
+            fast = fast.next.next;
         }
-        return false;
+        //快指针追上了慢指针是环形链表，返回true
+        return true;
     }
 }

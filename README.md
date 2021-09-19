@@ -1,2 +1,2 @@
 # Algorithm-Daily-practice
-Algorithm problem of  Leetcode，one question per day
+力扣的算法题，附刷题笔记
