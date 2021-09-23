@@ -1,5 +1,10 @@
 package top.mowangblog.algorithm.easy.day202109;
 
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
 /**
  * 给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。
  *
@@ -33,7 +38,7 @@ public class IsPalindrome {
         if (s.length() == 0) {
             return true;
         }
-
+        LinkedList<Object> objects = new LinkedList<>();
         //双指针
         int p1 = 0;
         int p2 = s.length() - 1;

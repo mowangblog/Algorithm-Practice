@@ -48,6 +48,22 @@ public class HasCycle {
         if (head == null || head.next == null) {
             return false;
         }
+//
+//        //哈希表
+//        if (head == null || head.next == null) {
+//            return false;
+//        }
+//        HashSet<ListNode> listNodes = new HashSet<>();
+//        while (head.next != null){
+//            //添加失败说明已经哈希表中已经有这个节点，链表进入了环
+//            if (!listNodes.add(head)) {
+//                return true;
+//            }
+//            head = head.next;
+//        }
+//        //遍历完都没有重复说明不是环形链表
+//        return false;
+
         //快慢指针
         ListNode low = head;
         ListNode fast = head.next;

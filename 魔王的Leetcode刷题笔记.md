@@ -97,7 +97,6 @@ public ListNode deleteDuplicates(ListNode head) {
 > 输出：false
 > 解释：链表中没有环。
 >
->
 > 提示：
 >
 > 链表中节点的数目范围是 [0, 104]
@@ -110,33 +109,66 @@ public ListNode deleteDuplicates(ListNode head) {
 
 ##### **思路与算法**
 
-由于题目的条件链表是排好序的，因此**重复的元素在链表中出现的位置是连续的**，因此我们只需要对链表进行一次遍历，就可以删除掉重复的元素。
+###### 解法1：哈希表
 
-##### **代码**
+最简单的方法是使用哈希表来存储所有已经访问过的节点，每次我们到达一个节点，判断该节点此前是否被访问过，如果该节点已经存在于哈希表中，则说明该链表是环形链表，否则就将该节点加入哈希表。
 
-```java
-public ListNode deleteDuplicates(ListNode head) {
-    //因为进去操作后head的指向会改变吗,因此先把原head地址存起来
-    ListNode listNode = head;
-    //如果链表不为空并且链表的下一个不为空就进入去重操作，否则直接返回
-    while (head != null && head.next != null) {
-        //拿到链表的下一个节点
-        ListNode next = head.next;
-        //由题目可知这是有序链表，因此我们只需要直接跟下一个节点比较是否重复即可
-        if (head.val == next.val) {
-            //如果重复了就去除这个节点
-            head.next = next.next;
-        }else{
-            //没有重复则指向下一个节点，循环往复
-            head = next;
+###### 解法2：快慢指针（floyd判环算法）
+
+定义一快一满两个指针，设置慢指针每次只移动一步，而快指针每次移动两步。初始时，慢指针在位置 head，而快指针在位置 head.next。这样一来，如果在移动的过程中，快指针反过来追上慢指针，就说明该链表为环形链表。否则快指针将到达链表尾部，该链表不为环形链表。
+
+![来源于网络](https://res.mowangblog.top/img/2021/09/5e2c95b3f62e2fc23667d769505913ad.png)
+
+##### **代码1**
+
+```
+public boolean hasCycle(ListNode head) {
+        //哈希表
+        if (head == null || head.next == null) {
+            return false;
         }
-    }
-    //返回原头节点
-    return listNode;
+        HashSet<ListNode> listNodes = new HashSet<>();
+        while (head.next != null){
+            //添加失败说明已经哈希表中已经有这个节点，链表进入了环
+            if (!listNodes.add(head)) {
+                return true;
+            }
+            head = head.next;
+        }
+        //遍历完都没有重复说明不是环形链表
+        return false;
+}
+```
+
+##### **代码2**
+
+```
+public boolean hasCycle(ListNode head) {
+        if (head == null || head.next == null) {
+            return false;
+        }
+        //快慢指针
+        ListNode low = head;
+        ListNode fast = head.next;
+        //如果快指针追上了慢指针，是环形链表，退出循环
+        while (low != fast){
+            //出现null说明遍历完了链表，不是环形链表
+            if(fast == null || fast.next == null){
+                return false;
+            }
+            //慢指针每次前进一步
+            low = low.next;
+            //快指针每次前进两步
+            fast = fast.next.next;
+        }
+        //快指针追上了慢指针是环形链表，返回true
+        return true;
 }
 ```
 
 ##### **提交截图**
+
+![image-20210918113144438](https://res.mowangblog.top/img/2021/09/image-20210918113144438.png)
 
 ## 双指针
 
