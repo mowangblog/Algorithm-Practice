@@ -14,18 +14,23 @@ import java.util.List;
  **/
 public class InorderTraversal {
     /**
-     * 解法2通过迭代
+     * 解法2迭代
      */
     public List<Integer> inorderTraversal2(TreeNode root) {
         List<Integer> result = new ArrayList<Integer>();
+        //使用Linkedlist模拟栈
         LinkedList<TreeNode> stack = new LinkedList<TreeNode>();
         while (root != null || !stack.isEmpty()){
             while (root != null){
+                //添加当前节点的左子节点包括当前节点
                 stack.add(root);
                 root = root.left;
             }
+            //根据先进后出的特性，现在出栈的是最左的节点
             root = stack.removeLast();
+            //添加到结果中
             result.add(root.val);
+            //然后遍历出栈节点的右子节点，同样会先入栈所有的左子节点
             root = root.right;
         }
         return result;
@@ -44,8 +49,11 @@ public class InorderTraversal {
         if(root == null){
             return;
         }
+        //优先遍历左子节点
         inorder(root.left,list);
+        //添加当前节点的值
         list.add(root.val);
+        //遍历右子节点
         inorder(root.right,list);
     }
 }

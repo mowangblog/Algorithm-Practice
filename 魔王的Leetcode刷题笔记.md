@@ -63,9 +63,7 @@ public ListNode deleteDuplicates(ListNode head) {
 }
 ```
 
-##### **提交截图**
 
-![image-20210912192742158](https://res.mowangblog.top/img/2021/09/image-20210912192742158.png)
 
 ### [141. 环形链表](https://leetcode-cn.com/problems/linked-list-cycle/)
 
@@ -166,10 +164,6 @@ public boolean hasCycle(ListNode head) {
 }
 ```
 
-##### **提交截图**
-
-![image-20210918113144438](https://res.mowangblog.top/img/2021/09/image-20210918113144438.png)
-
 ## 双指针
 
 ### [125. 验证回文串](https://leetcode-cn.com/problems/valid-palindrome/)
@@ -264,6 +258,109 @@ public boolean isPalindrome(String s) {
     }
 ```
 
-##### **提交截图**
+## 二叉树
 
-![image-20210917152326403](https://res.mowangblog.top/img/2021/09/image-20210917152326403.png)
+### [94. 二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)
+
+#### LeetCode原题：
+
+> 给定一个二叉树的根节点 root ，返回它的 中序 遍历。
+>
+> 示例 1：
+>
+>
+> 输入：root = [1,null,2,3]
+> 输出：[1,3,2]
+> 示例 2：
+>
+> 输入：root = []
+> 输出：[]
+> 示例 3：
+>
+> 输入：root = [1]
+> 输出：[1]
+> 示例 4：
+>
+>
+> 输入：root = [1,2]
+> 输出：[2,1]
+> 示例 5：
+>
+>
+> 输入：root = [1,null,2]
+> 输出：[1,2]
+>
+>
+> 提示：
+>
+> 树中节点数目在范围 [0, 100] 内
+> -100 <= Node.val <= 100
+>
+>
+> 进阶: 递归算法很简单，你可以通过迭代算法完成吗？
+>
+
+#### 题解：
+
+##### **思路与算法**
+
+首先我们需要知道什么是二叉树的中序遍历，就是首先遍历左子节点，然后访问当前节点，最后遍历右子节点。
+
+###### 解法1：递归
+
+最简单的方法也是最容易想到的，递归终止条件为节点为空，优先遍历左子节点，然后当前节点，最后遍历右子节点
+
+###### 解法2：迭代
+
+迭代方法我们需要通过维护一个显式的栈来遍历，而递归方法是隐式地维护了一个栈，迭代和递归的方式是等价的
+
+```java
+/**
+ * 解法1递归
+ */
+public List<Integer> inorderTraversal1(TreeNode root) {
+    List<Integer> linkedList= new LinkedList<>();
+    inorder(root,linkedList);
+    return linkedList;
+}
+
+public void inorder(TreeNode root,List list){
+    if(root == null){
+        return;
+    }
+    //优先遍历左子节点
+    inorder(root.left,list);
+    //添加当前节点的值
+    list.add(root.val);
+    //遍历右子节点
+    inorder(root.right,list);
+}
+```
+
+##### **代码2**
+
+```java
+ /**
+  * 解法2迭代
+  */
+public List<Integer> inorderTraversal2(TreeNode root) {
+    List<Integer> result = new ArrayList<Integer>();
+    //使用Linkedlist模拟栈
+    LinkedList<TreeNode> stack = new LinkedList<TreeNode>();
+    while (root != null || !stack.isEmpty()){
+        while (root != null){
+            //添加当前节点的左子节点包括当前节点
+            stack.add(root);
+            root = root.left;
+        }
+        //根据先进后出的特性，现在出栈的是最左的节点
+        root = stack.removeLast();
+        //添加到结果中
+        result.add(root.val);
+        //然后遍历出栈节点的右子节点，同样会先入栈所有的左子节点
+        root = root.right;
+    }
+    return result;
+}
+```
+

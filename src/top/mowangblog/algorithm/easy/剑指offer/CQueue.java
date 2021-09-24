@@ -33,8 +33,8 @@ import java.util.Stack;
 public class CQueue {
     LinkedList<Integer> listA,listB;
     public CQueue() {
-      listA = new LinkedList<>();
-      listB = new LinkedList<>();
+        listA = new LinkedList<>();
+        listB = new LinkedList<>();
     }
 
     public void appendTail(int value) {
