@@ -1,5 +1,8 @@
 package top.mowangblog.algorithm.easy.day202109;
 
+import java.util.HashMap;
+import java.util.Hashtable;
+
 /**
  * Algorithm-Daily-practice
  * 70. 爬楼梯
