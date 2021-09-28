@@ -13,7 +13,7 @@ import java.util.Hashtable;
  **/
 public class ClimbStairs {
     /**
-     * @description: 动态规划
+     * @description: 动态规划备忘录
      * @author: Xuan Li
      * @date: 2021/9/26 16:33
      */
