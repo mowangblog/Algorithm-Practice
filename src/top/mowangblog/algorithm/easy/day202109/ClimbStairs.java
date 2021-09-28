@@ -13,20 +13,44 @@ import java.util.Hashtable;
  **/
 public class ClimbStairs {
     /**
-     * @description: 递归方法，会超时
+     * @description: 动态规划
      * @author: Xuan Li
      * @date: 2021/9/26 16:33
-    */
+     */
     public int climbStairs(int n) {
-        return climb(n);
+        int[] ints = new int[n];
+        return climb(n,ints);
     }
-    public int climb(int n){
+    public int climb(int n,int[] ints){
         if(n == 1){
             return 1;
         }
         if(n == 2){
             return 2;
         }
-        return climb(n-1)+climb(n-2);
+        if(ints[n] != 0){
+            return ints[n];
+        }
+        return ints[n] = climb(n-1,ints)+climb(n-2,ints);
     }
+
+    /**
+     * @description: 递归方法，会超时
+     * @author: Xuan Li
+     * @date: 2021/9/26 16:33
+     */
+//    public int climbStairs(int n) {
+//        return climb(n);
+//    }
+//    public int climb(int n){
+//        if(n == 1){
+//            return 1;
+//        }
+//        if(n == 2){
+//            return 2;
+//        }
+//        return climb(n-1)+climb(n-2);
+//    }
+
+
 }
