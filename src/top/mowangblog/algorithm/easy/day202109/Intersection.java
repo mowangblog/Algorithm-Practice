@@ -1,8 +1,6 @@
 package top.mowangblog.algorithm.easy.day202109;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
 
 /**
  * 给定两个数组，编写一个函数来计算它们的交集。
@@ -32,24 +30,25 @@ public class Intersection {
     public int[] intersection(int[] nums1, int[] nums2) {
         Arrays.sort(nums1);
         Arrays.sort(nums2);
-        int p1 = 0, p2 = 0;
-        HashSet<Integer> integers = new HashSet<>();
+        int p1 = 0, p2 = 0,k = 0;
+        int[] result = new int[Math.min(nums1.length,nums2.length)];
         while (p1 < nums1.length && p2 < nums2.length) {
             if (nums1[p1] < nums2[p2]) {
                 p1++;
             }else if(nums1[p1] > nums2[p2]){
                 p2++;
             }else{
-                integers.add(nums1[p1]);
+                if(result[Math.max(k - 1, 0)] != nums1[p1] || k==0){
+                    result[k++] = nums1[p1];
+                }
                 p1++;
                 p2++;
             }
         }
-        int[] result = new int[integers.size()];
-        int k = 0;
-        for (Integer integer : integers) {
-            result[k++] = integer;
-        }
-        return result;
+        return Arrays.copyOfRange(result,0,k);
+    }
+
+    public static void main(String[] args) {
+        new Intersection().intersection(new int[]{8,0,3},new int[]{0,0});
     }
 }
