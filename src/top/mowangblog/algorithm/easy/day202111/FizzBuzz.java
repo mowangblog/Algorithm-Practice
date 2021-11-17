@@ -2,6 +2,7 @@ package top.mowangblog.algorithm.easy.day202111;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /**
