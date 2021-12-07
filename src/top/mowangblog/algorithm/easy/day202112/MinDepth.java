@@ -19,7 +19,6 @@ package top.mowangblog.algorithm.easy.day202112;
  * <p>
  * 输入：root = [2,null,3,null,4,null,5,null,6]
  * 输出：5
- *  
  * <p>
  * 提示：
  * <p>

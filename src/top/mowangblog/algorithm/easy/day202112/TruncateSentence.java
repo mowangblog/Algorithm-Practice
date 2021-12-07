@@ -28,7 +28,6 @@ package top.mowangblog.algorithm.easy.day202112;
  *
  * 输入：s = "chopper is not a tanuki", k = 5
  * 输出："chopper is not a tanuki"
- *  
  *
  * 提示：
  *
