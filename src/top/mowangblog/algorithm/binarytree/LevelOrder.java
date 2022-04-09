@@ -1,7 +1,5 @@
 package top.mowangblog.algorithm.binarytree;
 
-import jdk.nashorn.internal.objects.annotations.Where;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
