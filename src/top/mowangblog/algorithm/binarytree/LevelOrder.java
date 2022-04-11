@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- * Algorithm-Practice
+ * 二叉树的层序遍历
  *
  * @author : Xuan Li<mowangblog@qq.com>
  * @website : https://mowangblog.top
